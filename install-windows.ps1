@@ -119,7 +119,7 @@ Write-Host ""
 Write-ColorOutput Green "╭──────────────────────────────────────────────────╮"
 Write-ColorOutput Green "│  ✅ MRapids installed successfully!              │"
 Write-ColorOutput Green "│                                                  │"
-Write-ColorOutput Green "│  Installation directory: $InstallDir"
+Write-ColorOutput Green "│  Installation directory: $InstallDir             │"
 Write-ColorOutput Green "│                                                  │"
 Write-ColorOutput Green "│  Next steps:                                     │"
 Write-ColorOutput Green "│  1. Close and reopen your terminal               │"
@@ -134,7 +134,7 @@ Write-Host ""
 $createShortcut = Read-Host "Create Start Menu shortcut? (Y/N)"
 if ($createShortcut -eq 'Y' -or $createShortcut -eq 'y') {
     $startMenuPath = [Environment]::GetFolderPath("StartMenu")
-    $shortcutPath = Join-Path $startMenuPath "Programs\MRapids.lnk"
+    $shortcutPath = Join-Path $startMenuPath 'Programs\MRapids.lnk'
     
     $WshShell = New-Object -ComObject WScript.Shell
     $Shortcut = $WshShell.CreateShortcut($shortcutPath)
